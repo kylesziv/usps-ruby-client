@@ -1,11 +1,13 @@
 # frozen_string_literal: true
-require 'amazing_print'
-require 'nokogiri'
-require 'erubis'
-require 'active_support'
-require 'active_support/core_ext'
-require 'pry'
-require 'helpers/erubis_helper'
+
+
+# require 'amazing_print'
+# require 'nokogiri'
+# require 'erubis'
+# require 'active_support'
+# require 'active_support/core_ext'
+# require 'pry'
+# require 'helpers/erubis_helper'
 
 namespace :usps do
   namespace :api do
