@@ -46,7 +46,7 @@ def carrier_pickup_availability(options = {})
 				end
 
 				def build_carrier_pickup_availability_request(xml, options = {})
-					tag_unless_blank(xml, 'FirmName', options[:carrier_pickup_availability_request][:firm_name])
+					xml.tag!('FirmName', options[:carrier_pickup_availability_request][:firm_name])
 					xml.tag!('SuiteOrApt', options[:carrier_pickup_availability_request][:suite_or_apt])
 					xml.tag!('Address2', options[:carrier_pickup_availability_request][:address2])
 					xml.tag!('Urbanization', options[:carrier_pickup_availability_request][:urbanization])

@@ -24,7 +24,7 @@ module Usps
 				#  * *:zip5* (required, String) — 5 digit ZIP Code. Either ZIP5 or City and State are Required. For example: <ZIP5>77058</ZIP5>
 				#  * *:zip4* (required, String) — 4 digit ZIP Code. For example: <ZIP4>1234</ZIP4>
 				#  * *:confirmation_number* (required, String) — Enter exact Confirmation Number returned with Package Pickup Schedule request. For example: <ConfirmationNumber>ABC12345</ConfirmationNumber>
-def carrier_pickup_cancel(options = {})
+				def carrier_pickup_cancel(options = {})
 					throw ArgumentError.new('Required arguments :carrier_pickup_cancel_request missing') if options[:carrier_pickup_cancel_request].nil?
 					throw ArgumentError.new('Required arguments :carrier_pickup_cancel_request, :suite_or_apt missing') if options[:carrier_pickup_cancel_request][:suite_or_apt].nil?
 					throw ArgumentError.new('Required arguments :carrier_pickup_cancel_request, :address2 missing') if options[:carrier_pickup_cancel_request][:address2].nil?
@@ -49,7 +49,7 @@ def carrier_pickup_cancel(options = {})
 				end
 
 				def build_carrier_pickup_cancel_request(xml, options = {})
-					tag_unless_blank(xml, 'FirmName', options[:carrier_pickup_cancel_request][:firm_name])
+					xml.tag!('FirmName', options[:carrier_pickup_cancel_request][:firm_name])
 					xml.tag!('SuiteOrApt', options[:carrier_pickup_cancel_request][:suite_or_apt])
 					xml.tag!('Address2', options[:carrier_pickup_cancel_request][:address2])
 					xml.tag!('Urbanization', options[:carrier_pickup_cancel_request][:urbanization])

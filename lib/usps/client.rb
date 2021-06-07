@@ -13,7 +13,7 @@ module Usps
       end
       @logger ||= Usps::Config.logger || Usps::Logger.default
       @token ||= Usps.config.token
-      @user_id ||= Usps.config.user_id
+      @user_id ||= ENV.fetch('USPS_USER_ID', Usps.config.user_id)
     end
 
     def build_request(action, options)
